@@ -1,6 +1,6 @@
 package com.revature.controller;
 
-import com.revature.services.RabbitMqService;
+import com.revature.services.IRabbitMqService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,32 +8,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-// ! This class holds the mapping logic implementation for the RabbitMqController.
+/**
+ * This class holds the mapping logic implementation for the RabbitMqController.
+ * 
+ * @author ErikHaklar
+ */
 @RestController
-public class RabbitMqControllerImpl implements RabbitMqController {
+public class RabbitMqControllerImpl implements IRabbitMqController {
 
-  RabbitMqService mqService;
+  IRabbitMqService mqService;
 
-  // ! Grabs the RabbitMqService for usage within this class.
+  /**
+   * Grabs the RabbitMqService for usage within this class.
+   * 
+   * @author ErikHaklar
+   */
   @Autowired
-  public void setMqService(RabbitMqService mqService) {
+  public void setMqService(IRabbitMqService mqService) {
     this.mqService = mqService;
   }
 
-  // ! Maps sendMessage to /sendMessage following REST.
+  /**
+   * Maps receiveMessage to /message following REST. Use to receive messages to add into the
+   * RabbitMQ queue.
+   * 
+   * @author ErikHaklar
+   */
   @Override
-  @PostMapping("/sendMessage")
+  @PostMapping("/message")
   @ResponseStatus(HttpStatus.CREATED)
-  public boolean sendMessage(@RequestBody String messageToSend, String queueName) {
-    return mqService.sendMessage(messageToSend, queueName);
+  public boolean receiveMessage(@RequestBody String messageToSend, String queueName) {
+    return mqService.receiveMessage(messageToSend, queueName);
   }
-
-  // ! Maps getMessages to /getMessages following REST.
-  @Override
-  @PostMapping("/getMessages")
-  public boolean getMessages(String in) {
-    return mqService.getMessages(in);
-  }
-
-
 }

@@ -24,7 +24,7 @@ public class AmqApplication {
     return args -> {
       System.out.println("This app uses Spring Profiles to control its behavior.\n");
       System.out
-          .println("Sample usage: java -jar AMQ.jar --spring.profiles.active=testMessage,sender");
+          .println("Sample usage: java -jar AMQ.jar --spring.profiles.active=hello-world,sender");
     };
   }
 

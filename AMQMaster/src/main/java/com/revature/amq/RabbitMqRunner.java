@@ -9,7 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 // ! https://www.rabbitmq.com/tutorials/tutorial-one-spring-amqp.html.
 public class RabbitMqRunner implements CommandLineRunner {
 
-  @Value("${messagesQueue0.client.duration:0}")
+  @Value("${AMQ.client.duration:0}")
   private int duration;
 
   @Autowired
