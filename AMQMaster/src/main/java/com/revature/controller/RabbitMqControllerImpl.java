@@ -19,7 +19,7 @@ public class RabbitMqControllerImpl implements IRabbitMqController {
   IRabbitMqService mqService;
 
   /**
-   * Grabs the RabbitMqService for usage within this class.
+   * Grabs the IRabbitMqService for usage within this class.
    * 
    * @author ErikHaklar
    */
