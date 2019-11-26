@@ -1,0 +1,170 @@
+2019-11-26 12:32:50 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 12:32:50 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 12:33:05 INFO  root:31 - MessageToSend:{
+	"messageToSend":"hello there"
+}
+2019-11-26 12:35:20 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 12:35:20 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 12:35:24 INFO  root:31 - MessageToSend:{
+	"messageToSend":"hello there"
+}
+2019-11-26 12:36:19 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 12:36:19 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 12:36:28 INFO  root:31 - MessageToSend:{
+	"messageToSend":"hello there"
+}
+2019-11-26 12:43:15 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 12:43:15 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 12:43:22 INFO  root:31 - MessageToSend:{
+	"messageToSend":"hello there"
+}
+2019-11-26 12:44:54 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 12:49:02 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 12:49:02 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 12:49:09 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 12:49:09 INFO  root:31 - The messages key is: {
+	"messageToSend":"orange
+2019-11-26 12:56:39 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 12:56:39 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 12:56:45 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 12:56:45 INFO  root:31 - The messages key is: {
+	"messageToSend":"orange
+2019-11-26 13:09:31 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:09:31 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:09:37 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:09:37 INFO  root:31 - The messages key is: {
+	"messageToSend":"orange
+2019-11-26 13:12:37 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:12:37 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:12:44 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:12:44 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:17:50 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:17:50 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:17:55 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:17:55 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:20:17 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:20:17 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:20:20 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:20:20 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:25:10 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:25:10 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:25:17 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:25:17 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:25:17 INFO  root:31 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
+2019-11-26 13:27:22 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:27:22 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:27:26 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:27:26 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:27:26 INFO  root:31 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
+2019-11-26 13:30:11 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:30:11 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:30:14 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:30:14 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:30:14 INFO  root:31 - The message getting sent is: hello there
+}
+2019-11-26 13:30:14 INFO  root:31 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
+2019-11-26 13:41:18 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:41:18 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:41:27 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:41:27 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:41:27 INFO  root:31 - The message getting sent is: hello there
+}
+2019-11-26 13:41:27 INFO  root:31 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
+2019-11-26 13:42:56 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:42:56 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:42:59 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:42:59 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:42:59 INFO  root:31 - The message getting sent is: hello there
+}
+2019-11-26 13:42:59 WARN  root:23 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
+2019-11-26 13:47:42 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 13:47:42 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 13:47:48 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 13:47:48 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 13:47:48 INFO  root:31 - The message getting sent is: hello there
+}
+2019-11-26 13:47:48 WARN  root:23 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
+2019-11-26 14:40:32 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 14:40:32 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 14:40:38 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 14:40:38 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 14:40:38 INFO  root:31 - The message getting sent is: hello there
+}
+2019-11-26 14:40:38 WARN  root:23 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
+2019-11-26 14:44:34 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 14:44:34 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 14:44:38 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 14:44:38 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 14:44:38 INFO  root:31 - The message getting sent is: hello there
+}
+2019-11-26 14:44:38 WARN  root:23 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
+2019-11-26 14:45:53 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-26 14:45:53 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-26 14:45:56 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello there"
+}
+2019-11-26 14:45:56 INFO  root:31 - The messages key is: {
+	orange
+2019-11-26 14:45:56 INFO  root:31 - The message getting sent is: hello there
+}
+2019-11-26 14:45:56 WARN  root:23 - NullPointerException for sender.send() @ RabbitMqControllerImpl.java
