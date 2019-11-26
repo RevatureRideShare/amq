@@ -3,6 +3,7 @@ package com.revature.amq.controller;
 import static com.revature.util.LoggerUtil.info;
 import static com.revature.util.LoggerUtil.warn;
 import com.revature.amq.tut4.Tut4Sender;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,21 @@ public class RabbitMqControllerImpl implements IRabbitMqController {
   }
 
   /**
+   * The RabbitTemplate is a class provided by Spring for ease of use. It contains boilerplate code
+   * for RabbitMQ client classes.
+   */
+  private RabbitTemplate template;
+
+  /**
+   * Grabs the RabbitTemplate from Spring's library at:
+   * org.springframework.amqp.rabbit.core.RabbitTemplate.
+   */
+  @Autowired
+  public void setTemplate(RabbitTemplate template) {
+    this.template = template;
+  }
+
+  /**
    * Maps receiveMessage to /message following REST. Use to receive messages to add into the
    * RabbitMQ queue.
    */
@@ -44,7 +60,7 @@ public class RabbitMqControllerImpl implements IRabbitMqController {
     }
 
     try {
-      sender().send(messageToSend);
+      sender().send(messageToSend, template);
     } catch (NullPointerException e) {
       warn("NullPointerException for sender.send() @ RabbitMqControllerImpl.java");
       e.printStackTrace();

@@ -15,25 +15,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class Tut4Sender {
 
-  /**
-   * The RabbitTemplate is a class provided by Spring for ease of use. It contains boilerplate code
-   * for RabbitMQ client classes.
-   */
-  private RabbitTemplate template;
-
-  // @Autowired
-  // public RabbitTemplate template() {
-  // return new RabbitTemplate();
-  // }
-
-  /**
-   * The DirectExchange is grabbed from AmqConfig.java.
-   */
-  // @Autowired
-  // private DirectExchange direct;
-
-  // private DirectExchange direct;
-
   @Autowired
   public DirectExchange direct() {
     return new DirectExchange("amq.direct");
@@ -55,7 +36,7 @@ public class Tut4Sender {
    * key that is required to receive it.
    */
   // @Scheduled(fixedDelay = 1000, initialDelay = 500)
-  public void send(String message) {
+  public void send(String message, RabbitTemplate template) {
     // StringBuilder builder = new StringBuilder("Hello to ");
     // if (this.index.incrementAndGet() == 3) {
     // this.index.set(0);
@@ -81,7 +62,7 @@ public class Tut4Sender {
     info("The message getting sent is: " + splitMessage[1]);
 
     template.convertAndSend(direct().getName(), splitMessage[0], splitMessage[1]);
-    info(" [x] Sent '" + message + "'");
+    info(" [x] Sent '" + splitMessage[1] + "'");
   }
 
 }

@@ -12,8 +12,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * The driver class for the AMQ micro-service. Important note about how this AMQ micro-service
  * works: When a message is sent to the AMQ micro-service (which is done through a PostMapping), the
  * message is then sent into the AMQ micro-service queue. Once it is inside of that queue, the
- * receiver will automatically grab it, and send it off to it's destination. The benefit of this is
- * that messages are queued and handled asynchronously.
+ * destination micro-service should listen to the queue for a message with the key for that
+ * micro-service and grab it automatically. The benefit of this is that messages are queued and
+ * handled asynchronously.
  * 
  * @author ErikHaklar
  */
