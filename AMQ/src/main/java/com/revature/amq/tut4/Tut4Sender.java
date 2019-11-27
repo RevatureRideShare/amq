@@ -20,6 +20,21 @@ public class Tut4Sender {
   // return new DirectExchange("amq.direct");
   // }
 
+  /**
+   * The RabbitTemplate is a class provided by Spring for ease of use. It contains boilerplate code
+   * for RabbitMQ client classes.
+   */
+  private RabbitTemplate template;
+
+  /**
+   * Grabs the RabbitTemplate from Spring's library at:
+   * org.springframework.amqp.rabbit.core.RabbitTemplate.
+   */
+  @Autowired
+  public void setTemplate(RabbitTemplate template) {
+    this.template = template;
+  }
+
   public DirectExchange direct;
 
   @Autowired
@@ -43,7 +58,7 @@ public class Tut4Sender {
    * key that is required to receive it.
    */
   // @Scheduled(fixedDelay = 1000, initialDelay = 500)
-  public void send(String message, RabbitTemplate template) {
+  public void send(String message) {
     // StringBuilder builder = new StringBuilder("Hello to ");
     // if (this.index.incrementAndGet() == 3) {
     // this.index.set(0);

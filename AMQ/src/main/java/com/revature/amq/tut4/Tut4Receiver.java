@@ -1,14 +1,9 @@
 package com.revature.amq.tut4;
 
 import static com.revature.util.LoggerUtil.info;
-import org.springframework.amqp.core.AnonymousQueue;
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
-import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
@@ -35,42 +30,6 @@ public class Tut4Receiver {
   }
 
   /**
-   * Configures the receiver with direct exchanges. Once we disconnect the consumer the queue should
-   * be automatically deleted. To do this with the Spring AMQP client, we defined a AnonymousQueue,
-   * which creates a non-durable, exclusive, auto-delete queue with a auto generated name. The
-   * receiver class is set to be the RabbitMqReceiverServiceImpl.
-   */
-  @Bean
-  public Queue autoDeleteQueue1() {
-    return new AnonymousQueue();
-  }
-
-  @Bean
-  public Queue autoDeleteQueue2() {
-    return new AnonymousQueue();
-  }
-
-  @Bean
-  public Binding binding1a(DirectExchange direct, Queue autoDeleteQueue1) {
-    return BindingBuilder.bind(autoDeleteQueue1).to(direct).with("orange");
-  }
-
-  @Bean
-  public Binding binding1b(DirectExchange direct, Queue autoDeleteQueue1) {
-    return BindingBuilder.bind(autoDeleteQueue1).to(direct).with("black");
-  }
-
-  @Bean
-  public Binding binding2a(DirectExchange direct, Queue autoDeleteQueue2) {
-    return BindingBuilder.bind(autoDeleteQueue2).to(direct).with("green");
-  }
-
-  @Bean
-  public Binding binding2b(DirectExchange direct, Queue autoDeleteQueue2) {
-    return BindingBuilder.bind(autoDeleteQueue2).to(direct).with("black");
-  }
-
-  /**
    * Listens for messages inside autoDeleteQueue1, then calls receive() passing in the message from
    * that queue.
    */
@@ -93,23 +52,23 @@ public class Tut4Receiver {
    * method except for by a RabbitListener method.
    */
   @RabbitListener(queues = "#{autoDeleteQueue1.name}")
-  public void receive(String in, int receiver) throws InterruptedException {
+  public void receive(String in) throws InterruptedException {
     StopWatch watch = new StopWatch();
     watch.start();
-    info("instance " + receiver + " [x] Received '" + in + "'");
+    info(" [x] Received '" + in + "'");
 
     watch.stop();
-    info("instance " + receiver + " [x] Done in " + watch.getTotalTimeSeconds() + "s");
+    info(" [x] Done in " + watch.getTotalTimeSeconds() + "s");
   }
 
   @RabbitListener(queues = "#{autoDeleteQueue2.name}")
-  public void receive1(String in, int receiver) throws InterruptedException {
+  public void receive1(String in) throws InterruptedException {
     StopWatch watch = new StopWatch();
     watch.start();
-    info("instance " + receiver + " [x] Received '" + in + "'");
+    info(" [x] Received '" + in + "'");
 
     watch.stop();
-    info("instance " + receiver + " [x] Done in " + watch.getTotalTimeSeconds() + "s");
+    info(" [x] Done in " + watch.getTotalTimeSeconds() + "s");
   }
 
 }
