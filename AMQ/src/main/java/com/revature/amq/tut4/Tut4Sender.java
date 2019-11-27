@@ -15,9 +15,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class Tut4Sender {
 
+  // @Autowired
+  // public DirectExchange direct() {
+  // return new DirectExchange("amq.direct");
+  // }
+
+  public DirectExchange direct;
+
   @Autowired
-  public DirectExchange direct() {
-    return new DirectExchange("amq.direct");
+  public void setDirect(DirectExchange direct) {
+    this.direct = direct;
   }
 
   AtomicInteger index = new AtomicInteger(0);
@@ -61,7 +68,7 @@ public class Tut4Sender {
     info("The messages key is: " + splitMessage[0]);
     info("The message getting sent is: " + splitMessage[1]);
 
-    template.convertAndSend(direct().getName(), splitMessage[0], splitMessage[1]);
+    template.convertAndSend(direct.getName(), splitMessage[0], splitMessage[1]);
     info(" [x] Sent '" + splitMessage[1] + "'");
   }
 

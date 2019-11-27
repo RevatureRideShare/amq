@@ -22,9 +22,16 @@ public class RabbitMqControllerImpl implements IRabbitMqController {
   /**
    * Creates a new Tut4Sender for usage within this class.
    */
+  // @Autowired
+  // public Tut4Sender sender() {
+  // return new Tut4Sender();
+  // }
+
+  private Tut4Sender sender;
+
   @Autowired
-  public Tut4Sender sender() {
-    return new Tut4Sender();
+  public void setSender(Tut4Sender sender) {
+    this.sender = sender;
   }
 
   /**
@@ -60,11 +67,10 @@ public class RabbitMqControllerImpl implements IRabbitMqController {
     }
 
     try {
-      sender().send(messageToSend, template);
+      sender.send(messageToSend, template);
     } catch (NullPointerException e) {
       warn("NullPointerException for sender.send() @ RabbitMqControllerImpl.java");
       e.printStackTrace();
     }
-
   }
 }

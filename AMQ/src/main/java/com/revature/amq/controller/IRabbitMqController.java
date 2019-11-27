@@ -9,5 +9,4 @@ package com.revature.amq.controller;
 public interface IRabbitMqController {
 
   public void receiveMessage(String messageToSend);
-
 }
