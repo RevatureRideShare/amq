@@ -20,7 +20,7 @@ pipeline {
                 checkout scm
                 
                 // Run in non-interactive (batch) mode
-                sh 'mvn -U -B -DskipTests -f demo/pom.xml clean package'
+                sh 'mvn -U -B -DskipTests -f AMQMaster/pom.xml clean package'
             
             }
         }
