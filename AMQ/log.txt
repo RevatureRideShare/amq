@@ -545,3 +545,24 @@
 }
 2019-11-27 14:26:12 INFO  root:31 -  [x] Sent 'hello Brian
 }'
+2019-11-27 14:28:33 INFO  root:31 - This app uses Spring Profiles to control its behavior.
+
+2019-11-27 14:28:33 INFO  root:31 - Sample usage: java -jar rabbit-tutorials.jar --spring.profiles.active=hello-world,sender
+2019-11-27 14:28:41 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello Brian"
+}
+2019-11-27 14:28:41 INFO  root:31 - The messages key is: {
+	orange
+2019-11-27 14:28:41 INFO  root:31 - The message getting sent is: hello Brian
+}
+2019-11-27 14:28:41 INFO  root:31 -  [x] Sent 'hello Brian
+}'
+2019-11-27 14:29:23 INFO  root:31 - MessageToSend:{
+	"messageToSend":"orange!hello Brian"
+}
+2019-11-27 14:29:23 INFO  root:31 - The messages key is: {
+	orange
+2019-11-27 14:29:23 INFO  root:31 - The message getting sent is: hello Brian
+}
+2019-11-27 14:29:23 INFO  root:31 -  [x] Sent 'hello Brian
+}'

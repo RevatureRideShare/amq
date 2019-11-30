@@ -15,7 +15,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * message is then sent into the AMQ micro-service queue. Once it is inside of that queue, the
  * destination micro-service should listen to the queue for a message with the key for that
  * micro-service and grab it automatically. The benefit of this is that messages are queued and
- * handled asynchronously.
+ * handled asynchronously. Note: For some reason, this micro-service does not work currently as
+ * messages are not being persisted into the queue for reasons unknown and thus cannot be received.
+ * Note: This AMQ micro-servoce has taken reference from the official RabbitMQ Spring AMQP
+ * tutorials. Tutorial 4: Routing is especially useful for this project. Link:
+ * https://www.rabbitmq.com/tutorials/tutorial-four-spring-amqp.html.
  * 
  * @author ErikHaklar
  */

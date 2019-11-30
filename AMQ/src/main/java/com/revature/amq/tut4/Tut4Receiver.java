@@ -8,11 +8,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
 /**
- * Receives and sends messages to allow for communication between any micro-services. Listens for
- * messages from the queues specified. Where messages are sent from within this AMQ is determined by
- * the destination defined in the body of the message. Messages should begin with their destination
- * followed by a ! Example: UserService!... Each micro-service should listen for messages for that
- * destination (HTTP Response for that micro-service). Example: "/UserService".
+ * Note: This class does not belong within the AMQ micro-service, but should be included within
+ * every other micro-service that would like to receive RabbitMQ messages. This class currently
+ * exists within the AMQ Micro-service for testing purposes. Receives and sends messages to allow
+ * for communication between any micro-services. Listens for messages from the queues specified.
+ * Where messages are sent from within this AMQ is determined by the destination defined in the body
+ * of the message. Messages should begin with their destination followed by a ! Example:
+ * UserService!Hello World. Each micro-service should listen for messages for that destination by
+ * including/using this class.
  * 
  * @author ErikHaklar
  */
@@ -28,24 +31,6 @@ public class Tut4Receiver {
   public void setDirect(DirectExchange direct) {
     this.direct = direct;
   }
-
-  /**
-   * Listens for messages inside autoDeleteQueue1, then calls receive() passing in the message from
-   * that queue.
-   */
-  // @RabbitListener(queues = "#{autoDeleteQueue1.name}")
-  // public void receive1(String in) throws InterruptedException {
-  // receive(in, 1);
-  // }
-
-  /**
-   * Listens for messages inside autoDeleteQueue2, then calls receive() passing in the message from
-   * that queue.
-   */
-  // @RabbitListener(queues = "#{autoDeleteQueue2.name}")
-  // public void receive2(String in) throws InterruptedException {
-  // receive(in, 2);
-  // }
 
   /**
    * Receives messages from the RabbitMQ queue automatically. There should not be a call to this

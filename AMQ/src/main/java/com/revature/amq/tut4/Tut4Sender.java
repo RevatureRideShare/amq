@@ -1,24 +1,21 @@
 package com.revature.amq.tut4;
 
 import static com.revature.util.LoggerUtil.info;
-import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * This class provides implementation for sending messages into the AMQ micro-service queue.
+ * This class provides implementation for sending messages into the AMQ micro-service queue. Note:
+ * Where messages are sent from within this AMQ is determined by the destination defined in the body
+ * of the message. Messages should begin with their destination followed by a ! Example:
+ * UserService!Hello World.
  * 
  * @author ErikHaklar
  */
 @Service
 public class Tut4Sender {
-
-  // @Autowired
-  // public DirectExchange direct() {
-  // return new DirectExchange("amq.direct");
-  // }
 
   /**
    * The RabbitTemplate is a class provided by Spring for ease of use. It contains boilerplate code
@@ -42,31 +39,12 @@ public class Tut4Sender {
     this.direct = direct;
   }
 
-  AtomicInteger index = new AtomicInteger(0);
-
-  AtomicInteger count = new AtomicInteger(0);
-
   /**
-   * The keys for messages that can be sent. These are the destination micro-services for the
-   * message.
+   * Used for direct exchange messaging into the RabbitMQ queue where the key is a required variable
+   * that gives the message the key that is required to receive it. In other words, the message is
+   * given a key for it's micro-service destination.
    */
-  // private final String[] keys = {"orange", "black", "green"};
-
-  /**
-   * Sends a message into the RabbitMQ AMQ micro-service Queue after a fixedDelay and initialDelay.
-   * Used for direct exchange messaging as the key is a required variable that gives the message the
-   * key that is required to receive it.
-   */
-  // @Scheduled(fixedDelay = 1000, initialDelay = 500)
   public void send(String message) {
-    // StringBuilder builder = new StringBuilder("Hello to ");
-    // if (this.index.incrementAndGet() == 3) {
-    // this.index.set(0);
-    // }
-    // String key = keys[this.index.get()];
-    // builder.append(key).append(' ');
-    // builder.append(this.count.incrementAndGet());
-    // String message = builder.toString();
     /**
      * Removes the string that postman attaches when testing the message.
      */

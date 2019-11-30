@@ -18,14 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RabbitMqControllerImpl implements IRabbitMqController {
 
-  /**
-   * Creates a new Tut4Sender for usage within this class.
-   */
-  // @Autowired
-  // public Tut4Sender sender() {
-  // return new Tut4Sender();
-  // }
-
   private Tut4Sender sender;
 
   @Autowired

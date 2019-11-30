@@ -51,6 +51,10 @@ public class Tut4Config {
     return new AnonymousQueue();
   }
 
+  /**
+   * Configures autoDeleteQueue1 to associate with direct exchange key "orange". This means that
+   * this queue can be listened at for messages with the key "orange".
+   */
   @Bean
   public Binding binding1a(DirectExchange direct, Queue autoDeleteQueue1) {
     return BindingBuilder.bind(autoDeleteQueue1).to(direct).with("orange");
