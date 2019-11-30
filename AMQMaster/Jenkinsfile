@@ -41,7 +41,7 @@ pipeline {
                     -Dsonar.sources=. \
                     -Dsonar.host.url=https://sonarcloud.io/ \
                     -Dsonar.login=5363af8dec9f49fa8b6b1b0cb117c0be22f6b8be \
-                    -Dsonar.java.binaries=target/classes
+                    -Dsonar.java.binaries=AMQMaster/target/classes
                     '''
                 }
             }
