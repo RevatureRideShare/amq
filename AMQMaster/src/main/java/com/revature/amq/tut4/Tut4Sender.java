@@ -58,10 +58,14 @@ public class Tut4Sender {
      */
     String[] splitMessage;
     splitMessage = postmanStringRemoved1.split("!", 2);
-    info("The messages key is: " + splitMessage[0]);
     info("The message getting sent is: " + splitMessage[1]);
+    // Removes spaces that do not belong.
+    String keyNoSpaces = splitMessage[0].replaceAll("\\s", "");
+    // Removes "{" at the beginning of the string that does not belong there.
+    String key = keyNoSpaces.replace("{", "");
+    info("The messages key is: " + key);
 
-    template.convertAndSend(direct.getName(), splitMessage[0], splitMessage[1]);
+    template.convertAndSend(direct.getName(), key, splitMessage[1]);
     info(" [x] Sent '" + splitMessage[1] + "'");
   }
 

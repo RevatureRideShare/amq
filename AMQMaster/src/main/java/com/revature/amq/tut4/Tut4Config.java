@@ -57,22 +57,22 @@ public class Tut4Config {
    */
   @Bean
   public Binding binding1a(DirectExchange direct, Queue autoDeleteQueue1) {
-    return BindingBuilder.bind(autoDeleteQueue1).to(direct).with("orange");
+    return BindingBuilder.bind(autoDeleteQueue1).to(direct).with("UserService");
   }
 
   @Bean
   public Binding binding1b(DirectExchange direct, Queue autoDeleteQueue1) {
-    return BindingBuilder.bind(autoDeleteQueue1).to(direct).with("black");
+    return BindingBuilder.bind(autoDeleteQueue1).to(direct).with("AdminService");
   }
 
   @Bean
   public Binding binding2a(DirectExchange direct, Queue autoDeleteQueue2) {
-    return BindingBuilder.bind(autoDeleteQueue2).to(direct).with("green");
+    return BindingBuilder.bind(autoDeleteQueue2).to(direct).with("LocationService");
   }
 
   @Bean
   public Binding binding2b(DirectExchange direct, Queue autoDeleteQueue2) {
-    return BindingBuilder.bind(autoDeleteQueue2).to(direct).with("black");
+    return BindingBuilder.bind(autoDeleteQueue2).to(direct).with("SecurityService");
   }
 
 }
